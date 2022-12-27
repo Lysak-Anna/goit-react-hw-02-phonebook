@@ -25,18 +25,16 @@ class App extends Component {
   };
   onSubmitHandler = e => {
     e.preventDefault();
-    const {
-      elements: { name, number },
-    } = e.currentTarget;
-    this.checkName(this.state.contacts, name.value)
-      ? alert(`${name.value} is already in contacts`)
+    const name = e.currentTarget.elements.name.value;
+    const number = e.currentTarget.elements.number.value;
+    this.checkName(this.state.contacts, name)
+      ? alert(`${name} is already in contacts`)
       : this.setState(prevState => ({
-          contacts: [
-            ...prevState.contacts,
-            { name: name.value, number: number.value, id: nanoid() },
-          ],
+          contacts: [...prevState.contacts, { name, number, id: nanoid() }],
         }));
+    e.currentTarget.reset();
   };
+
   onChangeHandler = e => {
     this.setState({ filter: e.target.value });
   };

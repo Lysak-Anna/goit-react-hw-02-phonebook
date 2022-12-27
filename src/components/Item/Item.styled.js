@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-
+import { AiOutlineUserDelete } from 'react-icons/ai';
 export const Element = styled.li`
   display: flex;
 `;
@@ -37,4 +37,9 @@ export const Button = styled.button`
   margin-left: auto;
   border: none;
   background-color: transparent;
+`;
+export const Icon = styled(AiOutlineUserDelete)`
+  height: 20px;
+  width: 20px;
+  color: #e9322e;
 `;
